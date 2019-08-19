@@ -1,0 +1,477 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'Abel', sans-serif;
+}
+    
+ 
+
+
+
+
+/* ------> Container Grid */
+
+
+
+.grid-container{
+    display: grid; 
+    grid-template-columns: 100%; 
+    grid-template-rows: 10vh 10vh repeat(5, 1fr); 
+    grid-template-areas:
+    "header"
+    "nav"
+    "main-graph"
+    "main-circle"
+    "social-media"
+    "members"
+    "settings";
+}
+
+
+
+/* -------> HEADER STYLE */
+
+header{
+    grid-area: header;
+    background-color: rgb(33, 89, 141, .8);
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.app-name{
+    font-size: 20px;
+    color: white;
+    margin: 20px;
+}
+
+
+.flex-icons{
+    display: flex;
+    padding: 20px;
+}
+
+
+.bell-icon{
+    height: 3vh;
+    margin: 9px 8px 0px 0px;
+    cursor: pointer;
+}
+.bell-icon:hover{
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+
+
+.josh-img{
+    height: 5vh;
+    border-radius: 50%;
+}
+.josh-name{
+    font-size: 12px;
+    color: white;
+    margin: 9px 5px 0px 2px;
+
+}
+
+
+
+
+
+
+/* NAVIGATION BAR */
+
+nav{
+    grid-area: nav;
+    background-color:  rgb(33, 89, 141);
+    display: flex;
+    justify-content: center;
+}
+
+nav svg{
+    width: 10%;
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+
+
+/* LARGE GRAPH */
+
+.main-graph{
+    grid-area: main-graph;
+}
+
+.search-box{
+    display: flex;
+    justify-content: space-around;
+}
+
+.search-box h2{
+    margin: 20px;
+}
+
+.input{
+    background-color: rgba(219, 215, 215, 0.1);
+    width: 100%;
+    margin-left: 30px;
+    text-align: right;
+    padding: 20px;
+    border-left: 1px solid rgb(202, 196, 196, .5);
+    border-bottom: 1px solid rgb(202, 196, 196, .5);
+}
+
+.input input{
+    margin: 5px;
+    border-radius: 5px;
+    width: 80%;
+    height: 30px;
+}
+
+.alert-banner{
+    display: flex;
+    justify-content: space-between;
+    background-color:rgb(33, 89, 141, .2);
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#alert-banner-close{
+    font-size: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+.traffic-sub{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.traffic-sub h3{
+    margin-left: 10px;
+}
+
+
+.traffic-nav{
+    display: flex;
+    list-style-type: none;
+}
+
+.traffic-nav li{
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.traffic-nav li:hover{
+    background-color:rgb(33, 89, 141);
+    color: white;
+    border-radius: 10px;
+}
+
+
+
+
+
+/* DAILY TRAFFIC AND MOBILE USERS */
+
+.graph-circle{
+    grid-area: main-circle;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: 1px solid rgb(202, 196, 196, .5);
+    border-bottom: 1px solid rgb(202, 196, 196, .5);
+    margin-top: 50px;
+}
+
+#traffic-graph,
+#donut-graph{
+    margin-left: 20px;
+}
+
+.div-daily h3,
+.div-donut h3{
+    margin: 30px;
+}
+
+
+
+
+/* SOCIAL MEDIA */
+
+.social h3{
+    margin: 30px;
+}
+
+.social-media-icons{
+    grid-area: social-media;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(202, 196, 196, .5);
+    margin-top: 50px;
+}
+
+.twitter,
+.facebook,
+.google{
+    background-color:rgb(202, 196, 196, .5);
+    padding: 0px 50px;
+    margin: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(202, 196, 196, .5);
+    display: grid;
+    grid-template-columns: repeat(2, 80px); 
+    grid-template-rows: repeat(2, 80px);
+    grid-template-areas:
+    "logo name"
+    ". number";
+}
+
+.twitter svg,
+.facebook svg,
+.google svg{
+    background-color: #21598D;
+    border-radius: 100%;
+    padding: 10px;
+    grid-area: logo;
+    margin-top: 50px;
+}
+
+.social-media-name{
+    font-size: 20px;
+    grid-area: name;
+    margin-top: 50px;
+}
+
+
+.social-media-numbers{
+    font-size: 40px;
+    grid-area: number;
+}
+
+
+
+/* MEMBERS AREA */
+
+.new-member h3,
+.members-activity h3{
+    margin: 20px;
+}
+
+.members-container{
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(202, 196, 196, .5);
+    display: grid;
+    grid-template-columns: 50px minmax(200px, .9fr) minmax(10px, 70px); 
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "picmember namemember datemember"
+    "picmember emailmember datemember";
+}
+
+.members-container img{
+    width: 60%;
+    border-radius: 100%;
+    grid-area: picmember;
+    margin: 15px 0px 10px 10px;
+}
+
+.members-container h1{
+    grid-area: namemember;
+    font-size: 15px;
+}
+
+.members-container p{
+    grid-area: datemember;
+    margin: 15px 0px 10px 10px;
+
+}
+
+.members-container a{
+    grid-area: emailmember;
+}
+
+.members-container-2{
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(202, 196, 196, .5);
+    display: grid;
+    grid-template-columns: 50px minmax(300px, .9fr) 5px; 
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "pic activity arrow"
+    "pic time arrow";
+}
+
+.members-container-2 img{
+    grid-area: pic;
+    width: 60%;
+    border-radius: 100%;
+    margin: 15px 0px 10px 10px;
+}
+
+.members-container-2 p{
+    grid-area: activity;
+    font-size: 15px;
+    text-align: left;
+    margin-top: 15px;
+}
+
+.members-container-2 h1{
+    grid-area: time;
+    font-size: 10px;
+}
+
+.members-container-2 span{
+    grid-area: arrow;
+    font-size: 30px;
+    margin: 15px 0px 10px 10px;
+}
+
+.members-container-2 span:hover{
+ color:rgb(33, 89, 141);
+}
+
+
+/* settings */
+
+.settings{
+    grid-area: settings;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 1020px) {
+
+    .grid-container{
+        display: grid; 
+        grid-template-columns: 10vw 1fr; 
+        grid-template-rows: 8vh 2fr 2fr; 
+        grid-template-areas:
+        "header header"
+        "nav main-graph"
+        "nav main-circle"
+        "nav social-media"
+        "nav members"
+        "nav settings";
+    }
+    
+    .app-name{
+        font-size: 30px;
+        margin: 20px;
+    }
+    
+
+    nav{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    nav svg{
+        margin: 40px 0px 0px 45px;     
+        width: 30%;
+        cursor: pointer;
+
+    }
+
+    .graph-circle{
+        border-bottom: 1px solid rgb(202, 196, 196, .5);
+    }
+    
+    .border{
+        border-right: 1px solid rgb(202, 196, 196, .5);
+    }
+
+    #traffic-graph,
+    #donut-graph{
+        margin: 60px;
+        height: 20vh;
+    }
+
+    
+    .members-act{
+        display: flex;
+        justify-content: space-evenly;
+        border-bottom:1px solid rgb(202, 196, 196, .5);
+    }
+
+    .middle-line-members{
+        border-left:  1px solid rgb(202, 196, 196, .5);
+
+    }
+
+    .members-container,
+    .members-container-2{
+        border-bottom: 1px solid rgb(202, 196, 196, .5);
+    }
+
+    .members-container{
+        grid-template-columns: minmax(5%, 20%) 1fr 80px; 
+      }
+
+
+    .members-container img,
+    .members-container-2 img{
+        width: 50%;
+    }
+
+    .members-container h1{
+        margin-top: 15px;
+    }
+   
+    .members-container-2{
+        grid-template-columns: minmax(18%, 20%) 300px minmax(10px, 1fr); 
+        grid-template-rows: 1fr .5fr;
+    }
+
+    .members-container-2 p{
+        margin-top: 15px;
+    }
+
+    .members-container-2 h1{
+        margin-top: 0px;
+    }
+
+  
+    .new-member,
+    .members-activity{
+        width: 40%;
+    }
+
+    
+   
+
+   
+    
+
+ 
+
+
+
+
+}
