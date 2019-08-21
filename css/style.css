@@ -2,13 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: content-box;
-    font-family: 'Abel', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
     
- 
-
-
-
 
 /* ------> Container Grid */
 
@@ -53,7 +49,8 @@ header{
 }
 
 
-.bell-icon{
+.bell-icon,
+.checked{
     height: 50%;
     margin: 15px 8px 0px 0px;
     cursor: pointer;
@@ -64,8 +61,6 @@ header{
     backface-visibility: hidden;
     perspective: 1000px;
 }
-
-
 
 .josh-img{
     height: 5vh;
@@ -79,6 +74,51 @@ header{
 
 }
 
+/* NOTIFICATION BAR DESIGN */
+
+#notification-from-bell-icon{
+    position:fixed;
+    top: 8vh;
+    left: 29vw;
+    z-index: 99999;
+    box-sizing: border-box;
+    width: 50%;
+    height: 8em;
+    background-color:  rgb(252, 252, 252);
+    font-size: 13px;
+    transition: top 1s;
+    -webkit-box-shadow:0px 15px 90px 12px #908a8a ;
+    -moz-box-shadow:0px 15px 90px 12px #908a8a ;
+    box-shadow:0px 15px 90px 12px #908a8a ;
+    border-radius: 3px;
+    display: none;
+}
+
+#notification-from-bell-icon div{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+#notification-from-bell-icon p{
+    margin-top: 7px;
+}
+
+#notification-from-bell-icon div h1{
+    font-size: 15px;
+    margin-top: 0px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#notification-from-bell-icon div h1:hover{
+    background-color:rgb(33, 89, 141, .4);
+}
+
+#notification-from-bell-icon div:first-child{
+    border-bottom: 1px solid rgb(202, 196, 196, .9);
+}
+
 
 
 
@@ -88,7 +128,7 @@ header{
 
 nav{
     grid-area: nav;
-    background-color:  rgb(33, 89, 141);
+    background-color: rgb(33, 89, 141);
     display: flex;
     justify-content: center;
 }
@@ -107,6 +147,8 @@ nav svg{
 
 .main-graph{
     grid-area: main-graph;
+    color: rgb(155, 153, 153);
+    font-size: 15px;
 }
 
 .search-box{
@@ -138,7 +180,8 @@ nav svg{
 .alert-banner{
     display: flex;
     justify-content: space-between;
-    background-color:rgb(33, 89, 141, .2);
+    background-color:  rgb(33, 89, 141);
+    color: white;
     margin: 10px;
     border-radius: 5px;
     padding: 10px;
@@ -159,24 +202,25 @@ nav svg{
 }
 
 .traffic-sub h3{
-    margin-left: 10px;
+    margin: 8px 0px 20px 25px;  
 }
 
 
 .traffic-nav{
     display: flex;
     list-style-type: none;
+    margin-right: 30px;
 }
 
 .traffic-nav li{
-    margin-left: 20px;
-    margin-right: 20px;
     cursor: pointer;
-    padding: 10px;
+    margin: 0px 0px 10px 25px;
+    padding: 10px 5px;
+    
 }
 
 .traffic-nav li:hover{
-    background-color:rgb(33, 89, 141);
+    background-color:rgb(33, 89, 141, .4);
     color: white;
     border-radius: 10px;
 }
@@ -190,11 +234,14 @@ nav svg{
 .graph-circle{
     grid-area: main-circle;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     border-top: 1px solid rgb(202, 196, 196, .5);
     border-bottom: 1px solid rgb(202, 196, 196, .5);
     margin-top: 50px;
+    color: rgb(155, 153, 153);
+    font-size: 15px;
+
 }
 
 #traffic-graph,
@@ -212,8 +259,11 @@ nav svg{
 
 /* SOCIAL MEDIA */
 
+
 .social h3{
-    margin: 30px;
+    margin: 30px 0px 30px 25px;
+    color: rgb(155, 153, 153);
+    font-size: 17px;
 }
 
 .social-media-icons{
@@ -272,6 +322,8 @@ nav svg{
 .new-member h3,
 .members-activity h3{
     margin: 20px;
+    color: rgb(155, 153, 153);
+
 }
 
 .members-container{
@@ -359,6 +411,7 @@ nav svg{
 
 .message{
     margin: 30px;
+    color: rgb(155, 153, 153);
 }
 
 .widget-container{
@@ -366,31 +419,30 @@ nav svg{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .form-field,  
 .button-primary{
     width: 60%;
-    height: 5vh;
+    height: 50px;
     margin: 20px 0px 20px 0px;
     border-radius: 10px;
     border: 1px solid rgb(202, 196, 196, 4);
     background-color:  rgb(202, 196, 196, .1);
     align-self: center;
-
 }
 
 
 
 .form-area{
     width: 60%;
-    height: 5em;
+    height: 90px;
     border-radius: 10px;
     border: 1px solid rgb(202, 196, 196, 4);
     background-color:  rgb(202, 196, 196, .1);
     resize: none;
     align-self: center;
-
 }
 
 .button-primary{
@@ -402,6 +454,7 @@ nav svg{
 .settings{
     margin-top: 30px;
     text-align: center;
+    color: rgb(155, 153, 153);
 }
 
 .settings h3{
@@ -419,8 +472,8 @@ nav svg{
 .button-settings,
 .button-disabled{
     margin-top: 10px;
-    width: 17em;
-    height: 5vh;
+    width: 30%;
+    height: 50px;
     border-radius: 10px;
     background-color: rgb(33, 89, 141, .8);
     color: white;
@@ -431,6 +484,122 @@ nav svg{
     text-align: center;
 }
 
+
+#timezone{
+    margin: 20px 0px;
+    background-color:  rgb(202, 196, 196, .1);
+    border-radius: 10px;
+    width: 60%;
+    height: 50px;
+
+}
+
+.toggle-container,
+.toggle-container-two{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.toggle-container p,
+.toggle-container-two p{
+    margin-top: 30px;
+}
+
+
+/* MESSAGE ALERT THAT APPEARS WHEN USER PRESS SEND */
+
+#message-sent-alert{
+    background-color:rgb(33, 89, 141, .8);
+    border-radius: 10px;
+    padding: 10px;
+    width: 76%;
+    color: white;
+    margin-left: 10px;
+    display: none;
+}
+
+#message-error-alert{
+    background-color:rgb(241, 34, 34);
+    border-radius: 10px;
+    padding: 10px;
+    width: 76%;
+    color: white;
+    margin-left: 10px;
+    display: none;
+}
+
+
+
+
+/********* SLIDER BUTTON SETTINGS CONFIGURATION ***/
+
+    .switch-one,
+    .switch-two{
+        position: relative;
+        display: block;
+        width: 60px;
+        height: 34px;
+        margin-left: 10px;
+  }
+
+  .switch-one input,
+  .switch-two input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+    
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+
+      input:checked + .slider {
+        background-color:  rgb(33, 89, 141, .8);
+      }
+
+      input:focus + .slider {
+        box-shadow: 0 0 1px rgb(33, 89, 141, .8);
+      }
+
+
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+
+     
+      
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 34px;
+      }
+      
+      .slider.round:before {
+        border-radius: 50%;
+      }
 
 
 
@@ -452,7 +621,7 @@ nav svg{
 
     .grid-container{
         display: grid; 
-        grid-template-columns: 8vw 1fr; 
+        grid-template-columns: 5vw 1fr; 
         grid-template-rows: 100px 2fr; 
         grid-template-areas:
         "header header"
@@ -462,6 +631,8 @@ nav svg{
         "nav members"
         "nav settings";
     }
+
+
     .flex-icons{
         height: 20px;
         margin-top: 2px;
@@ -472,7 +643,8 @@ nav svg{
         margin: 30px 0px 0px 25px;
     }
 
-    .bell-icon{
+    .bell-icon,
+    .checked{
         height: 120%;
         margin-top: 2vh;
     }
@@ -480,18 +652,45 @@ nav svg{
     .josh-name{
         margin-top: 2vh;
     }
+
+   .traffic-sub h3{
+       padding-left: 30px;
+   }
+
+   #notification-from-bell-icon{
+    width: 15%;
+    float: right;
+    left: 75%;
+   }
+
+
+
+   /* MAIN GRAPH */
+
+   .widget-container-full{
+       margin: 50px;
+   }
+
+  
+
+  
     
 /* NAVIGATION BAR */
     nav{
         flex-direction: column;
-        justify-content: flex-start;
+      justify-content: left;
     }
 
     nav svg{
-        margin: 40px 0px 0px 3vw;     
-        width: 30px;
+        margin-top: 40px;
+        width: 40%;
         cursor: pointer;
+    }
 
+    nav svg:hover{
+        border-left: 3px solid white;
+        padding-left: 15px;
+        border-radius: 2px;
     }
 
 
@@ -507,9 +706,11 @@ nav svg{
 
     #traffic-graph,
     #donut-graph{
-        margin: 60px;
-        height: 20vh;
+        margin: 60px 90px;
+        height: 10vh;
+        width: 20%;
     }
+
 
     /* SOCIAL MEDIA */
 
@@ -518,40 +719,52 @@ nav svg{
     .google{
         flex-basis: 15%;
         grid-template-columns: 80px 50px; 
-}
+    }
 
-
-
+    .social h3{
+        margin-left: 70px;
+    }
 
 
 
     /* MEMBERS STYLE */
 
+
+
+    .lower-web-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        "newMembers recentActivity"
+        "message settings"
+    }
+
     
-    .members-act{
-        display: flex;
-        justify-content: space-evenly;
-        border-bottom:1px solid rgb(202, 196, 196, .5);
-    }
-
-    .middle-line-members{
-        border-left:  1px solid rgb(202, 196, 196, .5);
-
-    }
-
+   
     .members-container,
     .members-container-2{
         border-bottom: 1px solid rgb(202, 196, 196, .5);
     }
 
     .members-container{
-        grid-template-columns: minmax(5%, 20%) 1fr 80px; 
-      }
+        grid-template-columns: 100px 400px 100px;
+        grid-template-rows: .5fr .89fr;
 
+     }
 
-    .members-container img,
-    .members-container-2 img{
-        width: 50%;
+    .new-member{
+        padding: 0px 60px;
+        grid-area: newMembers;
+        border-bottom: 1px solid rgb(202, 196, 196, .5);
+        border-right: 1px solid rgb(202, 196, 196, .5);
+    }
+
+    .members-activity{
+       padding: 0px 60px;
+        grid-area: recentActivity;
+        border-bottom: 1px solid rgb(202, 196, 196, .5);
+
     }
 
     .members-container h1{
@@ -559,8 +772,9 @@ nav svg{
     }
    
     .members-container-2{
-        grid-template-columns: minmax(18%, 20%) 300px minmax(10px, 1fr); 
-        grid-template-rows: 1fr .5fr;
+        grid-template-columns: 100px 400px 50px; 
+        grid-template-rows: .7fr 45px;
+
     }
 
     .members-container-2 p{
@@ -571,93 +785,88 @@ nav svg{
         margin-top: 0px;
     }
 
-  
-    .new-member,
-    .members-activity{
-        width: 40%;
+    .last{
+        border: none;
     }
 
-
-
-
+  
 
 
 
     /* SETTINGS */
     
-    .message-settings{
-        display: flex;
-        justify-content: space-evenly;
-    }
-
+    
     .message{
-        margin-top: 30px;
+        padding-left: 70px;
+        grid-area: message;
+        border-right: 1px solid rgb(202, 196, 196, .5);
+        margin: 0px;
     }
 
-    .widget-container{
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 10px;
-    }
 
-    .form-field,  
-    .button-primary{
-        width: 10em;
-        height: 5vh;
-        margin: 20px 0px 20px 0px;
-        border-radius: 10px;
-        border: 1px solid rgb(202, 196, 196, 4);
-        background-color:  rgb(202, 196, 196, .1);
-    }
 
-    .form-area{
-        width: 300%;
-        height: 7em;
-        border-radius: 10px;
-        border: 1px solid rgb(202, 196, 196, 4);
-        background-color:  rgb(202, 196, 196, .1);
-        resize: none;
-    }
-
-    .button-primary{
-        background-color: rgb(33, 89, 141, .8);
-        color: white;
-    }
-
-    .middle-line-settings{
-    border-right:1px solid rgb(202, 196, 196, .5);
+    .message h3{
+        margin: 30px 0px 10px 20px;
     }
 
     .settings{
-        display: flex;
-        flex-direction: column;
-        margin-top: 30px;
+        grid-area: settings;
+        margin-left: 50px;
     }
 
-    .switch-one,
-    .switch-two{
+    .settings h3{
+        margin-bottom: 10px;
+        margin-left: 45px;
+    }
+
+    .settings form{
         margin-top: 40px;
+    }
+
+    .widget-container{
+        align-content: flex-start;
+        margin-left: 10px;
+    }
+
+    .form-field,
+    .button-primary{
+        width: 80%;
+        height: 40px;
+    }
+
+    .form-area{
+        width: 80%;
+        height: 100px;
+    }
+    
+    .settings,
+    .switch-one,
+    .switch-two,
+    .settings-button{
+        text-align: left;
+        margin-left: 40px;
+    }
+
+    #timezone{
+        width: 75%;
+        margin: 20px 0px 10px 50px;
     }
 
     .button-settings,
     .button-disabled{
-        margin-top: 10px;
-        width: 17em;
-        height: 5vh;
-        border-radius: 10px;
-        background-color: rgb(33, 89, 141, .8);
-        color: white;
+        height: 40px;
+        width: 40%;
     }
 
-    .form-field-two{
-        width: 100%;
-        height: 5vh;
-        margin: 20px 0px 20px 0px;
-        border-radius: 10px;
-        border: 1px solid rgb(202, 196, 196, 4);
-        background-color:  rgb(202, 196, 196, .1);
+    .toggle-container,
+    .toggle-container-two{
+        display: flex;
+        justify-content: left;
+        margin-left: 50px;
     }
 
-
+    .switch-one{
+    margin-left: 14px;
+    }
 
 }

@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/keyframes.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
     </head>
 
@@ -20,12 +20,21 @@
 
             <div class="flex-icons">
                 <img class="bell-icon" src="icons/icon-bell.svg" alt="notification bell icon">           
-                <div class="notifications"></div>
                 <img class="josh-img" src="images/member-4.jpg">
                 <h3 class="josh-name">Josh Sullivan</h3>
         </div>
-
     </header>
+
+    <div id="notification-from-bell-icon">
+        <div>
+            <p>You have 3 new followers</p>
+            <h1>x</h1>
+        </div>
+        <div>
+            <p>You have 6 overdue tasks</p>
+            <h1>x</h1>
+        </div>
+    </div>
 
 
 
@@ -122,7 +131,7 @@
                         </ul>
                 </div>
                 <div class="widget-container-full">
-                        <canvas id="myChart" width="300" height="100%"></canvas>                
+                        <canvas id="myChart" width="50" height="15"></canvas>                
                 </div>
 
             </section>
@@ -174,8 +183,8 @@
         </div>
     </section>            
 
+    <div class="lower-web-grid">
 
-        <div class="members-act">
 
                 <div class="new-member">
                     <h3>NEW MEMBERS</h3>
@@ -206,7 +215,7 @@
                         
 
 
-                    <div class="members-container">
+                    <div class="members-container last">
                             <img src="images/member-4.jpg" class="profile-image">
                             <h1>Dan Oliver</h1>
                             <a href="#">dan.oliver82@example.com</a>    
@@ -214,8 +223,8 @@
                     </div>
                 </div>
               
-                <div class="middle-line-members"></div>
-                   
+                <div class="middle-line"></div>
+        
                 <div class="members-activity">
                 <h3>RECENT ACTIVITY</h3>
                        
@@ -245,46 +254,54 @@
                         </div>
                             
     
-                        <div class="members-container-2">
+                        <div class="members-container-2 last">
                                 <img src="images/member-4.jpg" class="profile-image">
                                 <p>Dan Oliver posted on YourApps's SEO tips</p>
                                 <h1>5 days ago</h1>
                                 <span>&#8250;</span>
                         </div>
-                                
-                    </section>
                 </div>
-        </div>
 
-        <div class="message-settings">
-
-
-             <section class="message">
+             <div class="message">
                 <h3>MESSAGE USER</h3>
+
+                <div id="message-sent-alert">
+                    <p><b> Your Message Was Sent Successfully.</b></p>
+                </div>
+
+                <div id="message-error-alert">
+                    <p><b> User Field And Text Area Is Required </b></p>
+                </div>
+
                 <form class="widget-container">
                 <input type="text" placeholder="   Search for user" class="form-field" id="userField">
                 <textarea placeholder="   Message for user" class="form-area" id= "messageField"></textarea>
-                <button class="button-primary" id="send" >SEND</button>
+                <button class="button-primary" id="send" type="button" >SEND</button>
                 </form>
-            </section>
-
-            <div class="middle-line-settings"></div>
+            </div>
 
 
-            <section class="settings">
+
+            <div class="settings">
                     <h3>SETTINGS</h3>
 
+                    <div class="toggle-container">
+                    <p>Send Email Notification</p>
                     <label class="switch-one">
                         <input type="checkbox">
-                        <span class="slider round"> Send Email Notification</span>
-                    </label>         
-                    
+                        <span class="slider round"></span>
+                    </label>
+                    </div>
+                         
+                    <div class="toggle-container-two">
+                    <p>Set Profile to Public</p>
                     <label class="switch-two">
                         <input type="checkbox">
-                        <span class="slider round"> Set Profile to Public</span>
+                        <span class="slider round"></span>
                     </label>
+                    </div>
 
-                    <select class="form-field-two" id="timezone">
+                    <select id="timezone">
                         <option disabled selected>Select a Timezone</option>
                         <option>Eastern</option>
                     </select>
@@ -292,8 +309,8 @@
                         <button class="button-settings" id="save">SAVE</button>
                         <button class="button-disabled" id="cancel">CANCEL</button>
                     </div>
-            </section>
-        </div>
+                </div>
+    </div>
   
     </main>
 
