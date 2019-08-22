@@ -47,7 +47,7 @@ sendBanner.addEventListener('click', () =>{
 
 let bellIcon = document.querySelector('.bell-icon');
 let notificationDiv = document.getElementById("notification-from-bell-icon");
-let divToClose = document.querySelectorAll('#notification-from-bell-icon div');
+let divToClose = document.querySelector('#notification-from-bell-icon div');
 let toCloseEvent = document.querySelectorAll('#notification-from-bell-icon div h3');
 
 
@@ -65,13 +65,12 @@ document.addEventListener('click', (e) =>{
 
 });
 
+function closed(){
+    divToClose.style.display ="none";
+}
 
 
-
-
-
-
-/// ALL 3 CHARTS 
+/// MAIN CHART
 
 
 let callChart = document.getElementById('myChart').getContext('2d');
@@ -82,19 +81,53 @@ let chart = new Chart(callChart, {
     // The data for our dataset
     data: {
         labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
+        
         datasets: [{
-            label: 'Traffic Data',
+            label: 'Hourly Data',
             backgroundColor: 'rgba(154, 172, 190, 0.2)',
             borderColor: 'rgba(154, 172, 190, 1)',
             data: [500, 900, 700, 500, 600, 1200, 1100, 450, 1500, 1000, 2500]
-        }]
+        }],
+        
+        borderWidth: 1
     },
 
-    // Configuration options go here
     options: {
         events: ['click', 'touchstart', 'touchmove'],
+
     }
 });
+
+
+function daily(chart) {
+    chart.data.datasets[0].data = [140,100,50,80,100,500,200,100,500,10,20];
+    chart.data.datasets[0].label = "Daily Data";
+    chart.update();
+};
+
+function hourly(chart){
+    chart.data.datasets[0].data = [500, 900, 700, 500, 600, 1200, 1100, 450, 1500, 1000, 2500];
+    chart.data.datasets[0].label = "Hourly Data";
+    chart.update();
+}
+
+function weekly(chart){
+    chart.data.datasets[0].data = [100, 200, 500, 50, 60, 200, 100, 1450, 1200, 1200, 2300];
+    chart.data.datasets[0].label = "Weekly Data";
+    chart.update();
+}
+
+function monthly(chart){
+    chart.data.datasets[0].data = [1020, 2020, 500, 530, 620, 2400, 10, 150, 1250, 100, 200];
+    chart.data.datasets[0].label = "Monthly Data";
+    chart.update();
+}
+
+
+
+
+// LINE CHART 
+
 
 let chart2call = document.getElementById("traffic-graph");
 let chart2  = new Chart(chart2call, {
@@ -111,6 +144,10 @@ let chart2  = new Chart(chart2call, {
     },
 
 });
+
+
+
+// DONUT CHART
 
 
 let donut = document.getElementById("donut-graph");
