@@ -2,7 +2,7 @@
 
 const alert = document.getElementById("alert-banner-close");
 
-alert.addEventListener("click", (e) => {
+alert.addEventListener("click", () => {
     let banner = document.querySelector(".alert-banner");
     banner.style.display = 'none';
 });
@@ -20,17 +20,11 @@ sendBttn.addEventListener('click', () => {
     let userField = document.getElementById('userField').value.length;
     let messageField = document.getElementById('messageField').value.length;
     
-
     if (userField === 0){
         errorBanner.style.display = "block";
-    }
-
-    else if (messageField === 0) {
-        errorBanner.style.display = "block";
-        
-    } 
-
-    else{
+    } else if (messageField === 0) {
+        errorBanner.style.display = "block";    
+    } else{
         errorBanner.style.display = "none";
         sendBanner.style.display ="block";
     }
@@ -46,7 +40,7 @@ sendBanner.addEventListener('click', () =>{
 // NOTIFICATION BELL 
 
 let bellIcon = document.querySelector('.bell-icon');
-let notificationDiv = document.getElementById("notification-from-bell-icon");
+let notificationDiv = document.querySelector("#notification-from-bell-icon");
 let divToClose = document.querySelector('#notification-from-bell-icon div');
 let toCloseEvent = document.querySelectorAll('#notification-from-bell-icon div h3');
 
@@ -65,9 +59,7 @@ document.addEventListener('click', (e) =>{
 
 });
 
-function closed(){
-    divToClose.style.display ="none";
-}
+
 
 
 /// MAIN CHART

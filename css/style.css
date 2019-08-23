@@ -52,7 +52,7 @@ header{
 .bell-icon,
 .checked{
     height: 50%;
-    margin: 15px 8px 0px 0px;
+    margin: 15px 0px 0px 0px;
     cursor: pointer;
 }
 .bell-icon:hover{
@@ -60,6 +60,15 @@ header{
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
+}
+
+.green-dot{
+    background-color: rgb(89, 230, 89);
+    border-radius: 100%;
+    width: 6px;
+    height: 6px;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 
 .josh-img{
